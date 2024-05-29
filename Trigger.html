@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigger Sound</title>
+</head>
+<body>
+    <button id="triggerButton">Purple</button>
+
+    <script>
+        document.getElementById('triggerButton').addEventListener('click', function() {
+            fetch('https://api.telegram.org/bot7227875041:AAGdfzPTB6dz9IIpqVdo2eydgyGXl0Et818/sendMessage?chat_id=638542547&text=Online')
+                .then(response => {
+                    if (response.ok) {
+                        alert('Yes!');
+                    } else {
+                        alert('No ');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error triggering sound.');
+                });
+        });
+    </script>
+</body>
+</html>
